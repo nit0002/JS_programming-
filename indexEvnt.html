@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo list</title>
+</head>
+<body>
+    <h2>Learning Eevent Listener</h2>
+    <Div>
+        <h3>Images</h3>
+        <div style=" background-color: #a7a6a6; ">                  
+             <ul id="ulId">
+                <li> <img width="200px" id="img1" src="Program_1.jpg">Image1</li>
+                <li> <img  width="200px" id="img2" src="Program_2.jpg">Image2</li>
+                <li> <img width="200px" id="img3" src="Program_3.jpg" >Image3</li> 
+                <li> <img width="200px"  id="img4" src="Program_4.jpg">Image4</li>
+             </ul>
+        </div>
+    </Div>
+</body>
+<script>
+     //  onclick="alert('ye onclik chal gya ')
+
+    // document.getElementById('#img2').onclick= function(){
+    //     alert('this imge is good');
+    // }
+    
+    //atttachEvent()
+    //jQuery-on
+    // enviroment event,brouser event
+    // type, timestamp, defaultprevented
+    //target,toElevent, srcElement, currentTaget,
+    //clientx,clientY, screenX, screenY
+    //altkey, ctrlkey,shiftkey,keyCode
+// document.getElementById('ulId').addEventListener('click',function(e){
+//     console.log(e)
+//     alert('This contxt about the ul id ');
+// },false)
+    
+    
+                // document.getElementById('img2').addEventListener('click',function(e){
+                    // console.log("THis is for ul id")
+                //    
+                // },false)
+            // 
+                // document.getElementById('img2').addEventListener('click',function(e){
+                    // console.log("This is img2  ")
+                //    e.stopPropagation()   //bubbling n ho 
+                // },false)
+            //    
+                // document.getElementById('img4').addEventListener('click',function(e){
+                    // e.preventDefault();
+                    // console.log("This is img4  ")
+                    //   
+                // },false)
+
+     document.querySelector("#ulId").addEventListener('click',function(e){
+        console.log(e.target.tagName)
+       // console.log(e)
+        // console.log(e.target)
+        //  console.log(e.target.parentNode);
+        //  let removeIt = e.target .parentNode
+        //  removeIt.remove();
+        //removeIt.parentNode.removechild(removeIt) another way remove
+
+if(e.target.tagName === 'IMG'){
+    console.log(e.target.id);
+   let removeIt = e.target.parentNode
+   removeIt.remove();  
+}
+
+
+     },true)
+
+
+</script>
+</html>

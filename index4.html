@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dom Doc4</title>
+</head>
+<body style="background-color: #454545; color: aliceblue;">
+    <ul class="language">
+        <li>Cpp</li>
+    </ul>
+</body>
+<script>
+         function adlanguage(langName){
+            const li = document.createElement('li');
+            li.innerHTML = langName
+           document.querySelector('.language').appendChild(li)
+         }
+         adlanguage("javascript");
+         adlanguage("java"); 
+
+         function optiadLnguage(langName){
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(langName))
+            document.querySelector('.language').appendChild(li)
+         }
+         optiadLnguage('Mojo');
+
+        //Edit   
+        const fourthlang = document.querySelector('li:nth-child(4)')
+        console.log(fourthlang);
+        // fourthlang.innerHTML = 'GOlang'
+         //Edit
+        const newwayli = document.createElement('li');
+        newwayli.textContent = 'Webrtc' 
+        fourthlang.replaceWith(newwayli) 
+
+         //Edit
+        const firsthlang = document.querySelector("li:first-child")
+        firsthlang.outerHTML = '<li>typescript</li>'
+
+        //Edit
+         const  lastlang = document.querySelector('li:last-child')
+        lastlang.remove()          
+</script>
+</html>

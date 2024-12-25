@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Api Learning</h3>
+</body>
+<script>
+    const requestUrl='https://api.github.com/users/nit0002'
+   const xhr = new XMLHttpRequest()//this is object
+   xhr.open('GET', requestUrl);
+    
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) { // request is complete and was successful
+           const data = JSON.parse(xhr.responseText); // log the response
+        console.log(typeof data);
+        console.log(data.follower);
+        }
+    };
+    
+    xhr.send(); // send the request);
+
+
+
+//     if(xhr.readyState===4){
+//     console.log(this.responseText) // data most of time string format me ata h  
+//   }
+   
+   
+   
+</script>
+</html>
